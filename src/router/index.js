@@ -26,12 +26,15 @@ import Layout from '@/layout'
  */
 
 /**
- * constantRoutes
+ * constantRoutes : 没有权限控制，所有角色都可以访问
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
 export const constantRoutes = [
   {
+    /** *****************************************************************
+    * 登陆
+    ********************************************************************/
     path: '/login',
     component: () => import('@/views/login/index'),
     hidden: true
@@ -51,7 +54,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '项目总揽', icon: 'dashboard' }
     }]
   },
 
@@ -92,6 +95,7 @@ export const constantRoutes = [
 
   {
     path: '/nested',
+    hidden: true,
     component: Layout,
     redirect: '/nested/menu1',
     name: 'Nested',
@@ -151,6 +155,7 @@ export const constantRoutes = [
 
   {
     path: 'external-link',
+    hidden: true,
     component: Layout,
     children: [
       {
