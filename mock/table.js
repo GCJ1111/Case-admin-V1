@@ -1,13 +1,16 @@
 const Mock = require('mockjs')
 
+const name_list = ['张三', '李四', '王五', '赵六']
+
 const data = Mock.mock({
-  'items|30': [{
+  'items|5-13': [{
     id: '@id',
-    title: '@sentence(10, 20)',
+    title: '@sentence(2, 3)',
     'status|1': ['published', 'draft', 'deleted'],
-    author: 'name',
+    // author: 'name',
+    'author|1': name_list,
     display_time: '@datetime',
-    pageviews: '@integer(300, 5000)'
+    pageviews: '@integer(300, 500)'
   }]
 })
 
