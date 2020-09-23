@@ -12,7 +12,7 @@
         <template slot-scope="scope">{{ scope.$index }}</template>
       </el-table-column>
 
-      <el-table-column label="Title">
+      <el-table-column label="Title" align="center" width="500">
         <template slot-scope="scope">{{ scope.row.title }}</template>
       </el-table-column>
 
@@ -32,13 +32,19 @@
         </template>
       </el-table-column>
 
+      <el-table-column label="操作">
+        <template slot-scope="scope">
+          <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+          <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+        </template>
+      </el-table-column>
+
       <el-table-column align="center" prop="created_at" label="Display_time" width="200">
         <template slot-scope="scope">
           <i class="el-icon-time" />
           <span>{{ scope.row.display_time }}</span>
         </template>
       </el-table-column>
-      
     </el-table>
   </div>
 </template>
@@ -67,6 +73,9 @@ export default {
     this.fetchData();
   },
   methods: {
+    handleEdit(id, row) {
+      console.log(id, row)
+    },
     fetchData() {
       this.listLoading = true;
       getList().then((response) => {

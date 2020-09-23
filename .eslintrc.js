@@ -22,7 +22,7 @@ module.exports = {
       }
     }],
     "vue/singleline-html-element-content-newline": "off",
-    "vue/multiline-html-element-content-newline":"off",
+    "vue/multiline-html-element-content-newline": "off",
     "vue/name-property-casing": ["error", "PascalCase"],
     "vue/no-v-html": "off",
     'accessor-pairs': 2,
@@ -37,7 +37,7 @@ module.exports = {
     'camelcase': [0, {
       'properties': 'always'
     }],
-    'comma-dangle': [2, 'never'],
+    'comma-dangle': [0, 'never'],
     'comma-spacing': [2, {
       'before': false,
       'after': true
@@ -47,7 +47,7 @@ module.exports = {
     'curly': [2, 'multi-line'],
     'dot-location': [2, 'property'],
     'eol-last': 2,
-    'eqeqeq': ["error", "always", {"null": "ignore"}],
+    'eqeqeq': ["error", "always", { "null": "ignore" }],
     'generator-star-spacing': [2, {
       'before': true,
       'after': true
@@ -107,8 +107,8 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 2,
     'no-multi-spaces': 2,
     'no-multi-str': 2,
-    'no-multiple-empty-lines': [2, {
-      'max': 1
+    'no-multiple-empty-lines': [0, {
+      'max': 5
     }],
     'no-native-reassign': 2,
     'no-negated-in-lhs': 2,
@@ -162,11 +162,12 @@ module.exports = {
       }
     }],
     'padded-blocks': [2, 'never'],
-    'quotes': [2, 'single', {
+    'quotes': [2, 'double', {
       'avoidEscape': true,
       'allowTemplateLiterals': true
     }],
-    'semi': [2, 'never'],
+    // 关闭语句强制分号结尾
+    "semi": [0],
     'semi-spacing': [2, {
       'before': false,
       'after': true
