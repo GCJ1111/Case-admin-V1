@@ -26,24 +26,49 @@
         <template slot-scope="scope">{{ scope.row.pageviews }}</template>
       </el-table-column>
 
-      <el-table-column class-name="status-col" label="Status" width="110" align="center">
+      <el-table-column
+        class-name="status-col"
+        label="Status"
+        width="110"
+        align="center"
+      >
         <template slot-scope="scope">
-          <el-tag :type="scope.row.status | statusFilter">{{ scope.row.status }}</el-tag>
+          <el-tag :type="scope.row.status | statusFilter">{{
+            scope.row.status
+          }}</el-tag>
         </template>
       </el-table-column>
 
       <el-table-column label="操作">
         <template slot-scope="scope">
-          <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-          <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+
+          <el-button
+            size="mini"
+            @click="handleEdit(scope.$index, scope.row)"
+          >编辑
+          </el-button>
+
+          <el-button
+            size="mini"
+            type="danger"
+            @click="handleDelete(scope.$index, scope.row)"
+          >删除
+          </el-button>
+
         </template>
       </el-table-column>
 
-      <el-table-column align="center" prop="created_at" label="Display_time" width="200">
+      <el-table-column
+        align="center"
+        prop="created_at"
+        label="Display_time"
+        width="200"
+      >
         <template slot-scope="scope">
           <i class="el-icon-time" />
           <span>{{ scope.row.display_time }}</span>
         </template>
+
       </el-table-column>
     </el-table>
   </div>
@@ -73,8 +98,12 @@ export default {
     this.fetchData();
   },
   methods: {
+    // 得到点击行的 【id】 和 【row对象】
     handleEdit(id, row) {
-      console.log(id, row)
+      console.log("id= " + id, "row= ", row.title);
+    },
+    handleDelete(id, row) {
+      console.log(id, row);
     },
     fetchData() {
       this.listLoading = true;
