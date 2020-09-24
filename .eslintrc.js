@@ -56,7 +56,7 @@ module.exports = {
     'indent': [2, 2, {
       'SwitchCase': 1
     }],
-    'jsx-quotes': [2, 'prefer-single'],
+    'jsx-quotes': [0, 'prefer-single'],
     'key-spacing': [2, {
       'beforeColon': false,
       'afterColon': true
@@ -162,7 +162,8 @@ module.exports = {
       }
     }],
     'padded-blocks': [2, 'never'],
-    'quotes': [2, 'double', {
+    // 关闭 字符串的 引号检查
+    'quotes': [0, 'single', {
       'avoidEscape': true,
       'allowTemplateLiterals': true
     }],
